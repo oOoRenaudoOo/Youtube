@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView, FlatList, Item } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, FlatList, Item, DrawerLayoutAndroidComponent } from 'react-native'
 import React from 'react'
 
 import {videos} from '../constantes/video'
@@ -12,9 +12,8 @@ const Tendance = () => {
    
   return (
 
-    <SafeAreaView>
-      <FlatList style={styles.container}
-        aligItems = "center"
+    <SafeAreaView style={styles.container}>
+      <FlatList
         horizontal
         data={videos.filter(item => item.tendance == 1)}
         renderItem={({item}) => ( 
@@ -34,7 +33,6 @@ export default Tendance
 
 const styles = StyleSheet.create({
   container: {
-    // height: 100
+    backgroundColor:'#00000040'
   }
-
 })

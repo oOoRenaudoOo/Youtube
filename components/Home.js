@@ -11,12 +11,9 @@ import Video from './Video';
 
 const Home = ({navigation}) => {
   return (
-    <ImageBackground
-      source={require('../assets/images/background-white.jpg')}
-      resizeMode="cover"
+    <View
       style={styles.body}>
-      <Index
-        navigation = {navigation}></Index>
+      <Index menu={true} search={true} playList={false}></Index>
 
       <View style={styles.container}>
         <Text style={styles.titre}>TENDANCES</Text>
@@ -34,7 +31,7 @@ const Home = ({navigation}) => {
           </View>
         </View>
       </View>
-    </ImageBackground>
+    </View>
   );
 };
 
@@ -44,28 +41,26 @@ export default Home;
 
 const styles = StyleSheet.create({
   body: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-between',
+    backgroundColor: 'black'
   },
 
   container: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'column',
     marginRight: 10,
     marginLeft: 10,
   },
 
   titre: {
-    marginTop: 30,
+    marginTop: 15,
     marginBottom: 5,
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
     backgroundColor: '#00000095',
     padding: 5,
-    paddingLeft: 15,
-    borderTopRightRadius: 15,
-    borderBottomRightRadius: 15,
   },
 });

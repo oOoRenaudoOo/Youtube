@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, Image, Button } from 'react-native'
+import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 
 import {categories} from '../../constantes/categorie'
 
@@ -7,23 +8,23 @@ import {categories} from '../../constantes/categorie'
 
 
 const Mini = ({item }) => {
-    console.log("images: " ,item.id, item.image, item.categorie, categories[item.categorie].nom)
+    const navigation = useNavigation();
  return (
    
-    <View style={styles.item_card}>
+    <View View style={styles.item_card}>
 
         <View style={styles.item_bandeau}>
-            <Text style={styles.item_text}>{categories[item.categorie].nom}</Text>
+            <Text style={styles.item_bandeau_text}>{categories[item.categorie].nom}</Text>
         </View>
         
-    
-        <Image style={styles.item_image}
-          source={item.image}
-        /> 
-   
-       
+        <TouchableOpacity onPress={()=> navigation.navigate("Detail", {item})}>
+            <Image style={styles.item_image}
+                source={item.image}
+            /> 
+        </TouchableOpacity>
+        
         <View style={styles.item_footer}>
-            <Text style={styles.item_text}>
+            <Text style={styles.item_footer_text}>
                 {
                     (item.titre.length >= 25) ?
                     item.titre.substring(0,20) + '...' : item.titre }
@@ -38,42 +39,50 @@ export default Mini
 
 const styles = StyleSheet.create({
     item_text : {
-        fontSize: 13,
+        fontSize: 18,
         fontWeight: 'bold',
-        textAlign:'center'
+        textAlign:'center',
+        justifyContext:'center',
+        color:'black'
     },
 
     item_card : {
         flexDirection: "column",
         alignItems: 'center',
         justifyContent: 'space-around',
-        backgroundColor: "#00000080",
-
-        // padding:10,
-        // margin: 10,
-        height: 180,
-        width: 200,
-        // borderRadius: 20
+        height: 190,
+        width: 210,
     },
 
     item_image: {
-        justifyContent: 'space-between',
-        backgroundColor: '#00000030',
-        borderWidth: 1,
-        width: 170,
-        height: 110
-
+        width: 200,
+        height: 100,
     },
 
     item_footer: {
         width: 200,
-        height: 20,
+        height: 30,
+        padding:2,
         backgroundColor: '#D8EA17', 
+    },
+    item_footer_text:{
+        fontSize: 18,
+        fontWeight: 'bold',
+        color:'black'
+
     },
 
     item_bandeau: {
+        justifyContent:'center',
         width: 200,
-        height: 20,
+        height: 30,
         backgroundColor: '#D8EA17', 
+
+    },
+    item_bandeau_text: {
+        fontSize: 13,
+        fontWeight:'bold',
+        color:'black',
+        marginLeft:5
     }
 })
