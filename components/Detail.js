@@ -1,20 +1,27 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 
-import DetailVideo from './cards/DetailVideo';
-import HeaderDetail from './cards/HeaderDetail';
-
+import Videoplayer from "";
+import Index from '../Header';
+import InfoVideo from './InfoVideo';
 
 const Detail = ({route, navigation}) => {
+  
   const { item } = route.params;
   console.log(item)
+  
+  
+  
   return (
     <View style={styles.body}>
-      <DetailVideo style={styles.container} item={item}></DetailVideo>
-    </View>
 
+      <Videoplayer style={styles.container} item={item}></Videoplayer>  
+      <Index menu={false} search={false} playList={true}></Index>
+      <InfoVideo item={item}/>
+  </View>
   )
 }
+
 
 export default Detail
 
@@ -26,6 +33,6 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         backgroundColor: 'black',
-        // padding: 2
+        justifyContext:'center',
       },
 })

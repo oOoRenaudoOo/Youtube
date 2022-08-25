@@ -5,6 +5,7 @@ import {categories} from '../../constantes/categorie'
 import { Icon } from '@rneui/base';
 
 export default function DetailVideo({item}) {
+    console.log("categorie",item.categorie)
     return (
     <View style={styles.body}>
         <View style={styles.lecteur}>
@@ -16,7 +17,9 @@ export default function DetailVideo({item}) {
                     onPress={() => console.log('hello')}/> 
             </ImageBackground>
         </View>
+
         <Index menu={false} search={false} playList={true}></Index>
+        
         <View style={styles.detail_container}>
             <Text style={styles.title}>{item.titre} </Text>
             <View style={styles.cat_container}>  

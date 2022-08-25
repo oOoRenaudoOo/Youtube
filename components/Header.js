@@ -4,9 +4,9 @@ import { Icon } from '@rneui/themed';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 
-const Header = ({menu}, {search}) => {
+const Header = ({menu, search, playList}) => {
     
-    console.log(menu)
+    console.log(search)
     const navigation = useNavigation();
 
 
@@ -42,14 +42,15 @@ const Header = ({menu}, {search}) => {
                 size={25} />
         </View>) : null}
         
-        {/* { playList ? (<View style={styles.logo_icon}>
+        { playList ? (<View style={styles.logo_icon}>
                 <Icon 
                     name="playlist-play"
                     
                     color="yellow"
                     size={30} 
-                    onPress={setShowThisCat(!showThisCat)}/> 
-                </View>) : null }  */}
+                    // onPress={setShowThisCat(!showThisCat)}
+                    /> 
+                </View>) : null }  
 
     </View>
 
