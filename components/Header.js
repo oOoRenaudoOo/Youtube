@@ -1,12 +1,14 @@
 import { StyleSheet, Text, View, TextInput } from 'react-native'
 import React from 'react'
 import { Icon } from '@rneui/themed';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+
+
+
+
 
 const Header = ({menu, search, playList}) => {
     
-    console.log(search)
     const navigation = useNavigation();
 
 
@@ -45,7 +47,6 @@ const Header = ({menu, search, playList}) => {
         { playList ? (<View style={styles.logo_icon}>
                 <Icon 
                     name="playlist-play"
-                    
                     color="yellow"
                     size={30} 
                     // onPress={setShowThisCat(!showThisCat)}
@@ -64,7 +65,8 @@ export default Header
 const styles = StyleSheet.create({
     header: {
         padding: 5,
-        margin: 15,
+        marginHorizontal: 15,
+        marginBottom:5,
         flexDirection: 'row',
         height: 55,
         justifyContent: 'space-between',

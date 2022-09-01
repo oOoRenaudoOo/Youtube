@@ -5,6 +5,7 @@ import React from 'react'
 
 
 
+
 export default function InfoVideo({item}) {
 
     <View style={styles.detail_container}>

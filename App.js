@@ -7,7 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 import HomeScreen from './components/Home';
-import DetailScreen from './components/Detail';
+import DetailScreen from './components/cards/DetailVideo';
 
 const Stack = createNativeStackNavigator();
 

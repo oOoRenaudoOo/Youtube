@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native'
 import React from 'react'
 
-import {categories} from '../../constantes/categorie'
+// import {categories} from '../../constantes/categorie'
 import { BackgroundImage, Icon } from '@rneui/base'
 
 

@@ -1,16 +1,19 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 
-import Videoplayer from "";
-import Index from '../Header';
+import Videoplayer from './Videoplayer';
+import Index from './Header';
 import InfoVideo from './InfoVideo';
+
+
+
+
 
 const Detail = ({route, navigation}) => {
   
   const { item } = route.params;
   console.log(item)
-  
-  
+ 
   
   return (
     <View style={styles.body}>
@@ -23,7 +26,7 @@ const Detail = ({route, navigation}) => {
 }
 
 
-export default Detail
+export default Detail;
 
 
 
@@ -35,4 +38,5 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         justifyContext:'center',
       },
+
 })

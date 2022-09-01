@@ -4,7 +4,12 @@ import Index from '../Header';
 import {categories} from '../../constantes/categorie'
 import { Icon } from '@rneui/base';
 
-export default function DetailVideo({item}) {
+
+
+
+export default function DetailVideo({route, navigation}) {
+    const { item } = route.params;
+    console.log(item)
     console.log("categorie",item.categorie)
     return (
     <View style={styles.body}>
@@ -21,10 +26,10 @@ export default function DetailVideo({item}) {
         <Index menu={false} search={false} playList={true}></Index>
         
         <View style={styles.detail_container}>
-            <Text style={styles.title}>{item.titre} </Text>
             <View style={styles.cat_container}>  
                 <Text style={styles.cat_text}>{categories[item.categorie].nom}</Text>
             </View>
+            <Text style={styles.title}>{item.titre} </Text>
             <View style={styles.description_container}>  
                 <Text style={styles.description_text}>{item.description}</Text>
             </View>
@@ -38,13 +43,15 @@ const styles = StyleSheet.create({
         flex:1,
         flexDirection: 'column',
         justifyContext:'center',
+        backgroundColor: 'black',
+        padding:5
    
     },
     detail_container: {
         flex:1,
+        marginTop:10,
         margin: 30,
-        padding: 10,
-        color: '#fff',
+  
     },
 
     title: {
@@ -64,23 +71,26 @@ const styles = StyleSheet.create({
     cat_container: {
         backgroundColor: "yellow", 
         borderRadius: 5,
-        width:110
+        width:110,
+        height:25,
+        alignItems: 'center',
+        justifyContent:'center',
+        marginBottom: 20
     },
     cat_text: {
-        textAlign:'center',
         color:'black',
-        marginLeft: 7,
-        height: 25
     },
     description_container: {
-        marginTop: 20,
+        flex:1,
+        marginTop: 10,
+        backgroundColor:"#ffffff30",
+        borderRadius:10
         
     },
     description_text: {
-        marginTop: 20,
-        TextAlign:'center',
         fontSize: 15,
-        color:'white'
+        color:'white',
+        padding: 10
     },
     lecteur: {
         flex: 1,
